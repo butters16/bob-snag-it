@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BobSnagIt", "BobSnagIt\BobSnagIt.vbproj", "{DA79BB53-B138-4DFE-8E34-C3C14959DE3B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA79BB53-B138-4DFE-8E34-C3C14959DE3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA79BB53-B138-4DFE-8E34-C3C14959DE3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA79BB53-B138-4DFE-8E34-C3C14959DE3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA79BB53-B138-4DFE-8E34-C3C14959DE3B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
