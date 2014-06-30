@@ -25,12 +25,13 @@ Partial Class SnagIt
         Me.SnagItButton = New System.Windows.Forms.Button
         Me.SiteIdNumericUpDown = New System.Windows.Forms.NumericUpDown
         Me.LabelComboBox = New System.Windows.Forms.ComboBox
+        Me.DoNotSaveCompleteCheckBox = New System.Windows.Forms.CheckBox
         CType(Me.SiteIdNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SnagItButton
         '
-        Me.SnagItButton.Location = New System.Drawing.Point(12, 65)
+        Me.SnagItButton.Location = New System.Drawing.Point(12, 89)
         Me.SnagItButton.Name = "SnagItButton"
         Me.SnagItButton.Size = New System.Drawing.Size(293, 25)
         Me.SnagItButton.TabIndex = 0
@@ -54,12 +55,23 @@ Partial Class SnagIt
         Me.LabelComboBox.Size = New System.Drawing.Size(293, 21)
         Me.LabelComboBox.TabIndex = 6
         '
+        'DoNotSaveCompleteCheckBox
+        '
+        Me.DoNotSaveCompleteCheckBox.AutoSize = True
+        Me.DoNotSaveCompleteCheckBox.Location = New System.Drawing.Point(12, 66)
+        Me.DoNotSaveCompleteCheckBox.Name = "DoNotSaveCompleteCheckBox"
+        Me.DoNotSaveCompleteCheckBox.Size = New System.Drawing.Size(292, 17)
+        Me.DoNotSaveCompleteCheckBox.TabIndex = 7
+        Me.DoNotSaveCompleteCheckBox.Text = "Do not save complete or web archive (due to page load)"
+        Me.DoNotSaveCompleteCheckBox.UseVisualStyleBackColor = True
+        '
         'SnagIt
         '
         Me.AcceptButton = Me.SnagItButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(316, 107)
+        Me.ClientSize = New System.Drawing.Size(316, 128)
+        Me.Controls.Add(Me.DoNotSaveCompleteCheckBox)
         Me.Controls.Add(Me.SiteIdNumericUpDown)
         Me.Controls.Add(Me.SnagItButton)
         Me.Controls.Add(Me.LabelComboBox)
@@ -67,10 +79,12 @@ Partial Class SnagIt
         Me.Text = "Bob SnagIt"
         CType(Me.SiteIdNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents SnagItButton As System.Windows.Forms.Button
     Friend WithEvents SiteIdNumericUpDown As System.Windows.Forms.NumericUpDown
     Friend WithEvents LabelComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents DoNotSaveCompleteCheckBox As System.Windows.Forms.CheckBox
 
 End Class

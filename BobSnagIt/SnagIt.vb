@@ -46,8 +46,12 @@ Public Class SnagIt
         BringWindowToTop(Me.Handle) 'TODO(John Keith): Removing this causes IE window to not come to focus.
 
         BringWindowToTop(IEClassName)
-        IEPageSave(fileTypeUpFromBottom:=2) 'Web Archive, single file (*.mht)
-        IEPageSave(fileTypeUpFromBottom:=3) 'Webpage, complete (*.htm;*.html)
+        If DoNotSaveCompleteCheckBox.Checked Then
+            IEPageSave(fileTypeUpFromBottom:=1) 'Webpage, HTML only (*.htm;*.html)
+        Else
+            IEPageSave(fileTypeUpFromBottom:=2) 'Web Archive, single file (*.mht)
+            IEPageSave(fileTypeUpFromBottom:=3) 'Webpage, complete (*.htm;*.html)
+        End If
     End Sub
 
     Private Sub BringWindowToTop(ByVal windowClassName As String)
