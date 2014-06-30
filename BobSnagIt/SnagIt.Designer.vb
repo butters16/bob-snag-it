@@ -48,7 +48,7 @@ Partial Class SnagIt
         'LabelComboBox
         '
         Me.LabelComboBox.FormattingEnabled = True
-        Me.LabelComboBox.Items.AddRange(New Object() {"Start", "Search", "Clear", "ClearUsingDob", "HitOpen_List", "HitOpen_ListFirst", "HitOpen_ListMiddle", "HitOpen_ListLast", "HitOpen_Details", "HitDismiss_List", "HitDismiss_ListFirst", "HitDismiss_ListMiddle", "HitDismiss_ListLast", "HitDismiss_DetailsHitOpen_List", "HitMultiCaseMultiCharge_List", "HitMultiCaseMultiCharge_ListFirst", "HitMultiCaseMultiCharge_ListMiddle", "HitMultiCaseMultiCharge_ListLast", "HitMultiCaseMultiCharge_Details1", "HitMultiCaseMultiCharge_Details2"})
+        Me.LabelComboBox.Items.AddRange(New Object() {"Start", "Search", "Clear", "ClearUsingDob", "HitOpen_List", "HitOpen_ListFirst", "HitOpen_ListMiddle", "HitOpen_ListLast", "HitOpen_Details", "HitDismiss_List", "HitDismiss_ListFirst", "HitDismiss_ListMiddle", "HitDismiss_ListLast", "HitDismiss_Details", "HitMultiCaseMultiCharge_List", "HitMultiCaseMultiCharge_ListFirst", "HitMultiCaseMultiCharge_ListMiddle", "HitMultiCaseMultiCharge_ListLast", "HitMultiCaseMultiCharge_Details1", "HitMultiCaseMultiCharge_Details2"})
         Me.LabelComboBox.Location = New System.Drawing.Point(12, 38)
         Me.LabelComboBox.Name = "LabelComboBox"
         Me.LabelComboBox.Size = New System.Drawing.Size(293, 21)
