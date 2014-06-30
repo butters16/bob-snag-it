@@ -41,12 +41,12 @@ Public Class SnagIt
     Private Sub Save()
         BringWindowToTop(FirefoxClassName)
         FirefoxAbductionSaveImage()
-        FirefoxSaveAsWebpageComplete() 'Webpage, complete (*.htm;*.html)
 
         BringWindowToTop(Me.Handle) 'TODO(John Keith): Removing this causes IE window to not come to focus.
 
         BringWindowToTop(IEClassName)
-        IEPageSaveAsWebArchive()
+        IEPageSave(fileTypeUpFromBottom:=2) 'Web Archive, single file (*.mht)
+        IEPageSave(fileTypeUpFromBottom:=3) 'Webpage, complete (*.htm;*.html)
     End Sub
 
     Private Sub BringWindowToTop(ByVal windowClassName As String)
@@ -84,20 +84,7 @@ Public Class SnagIt
         Threading.Thread.Sleep(DialogPopupWaitMs) 'Allow save dialog to close.
     End Sub
 
-    Private Sub FirefoxSaveAsWebpageComplete()
-        SendKeys.Send("^(s)") '"Save Page As...".
-        Threading.Thread.Sleep(DialogPopupWaitMs) 'Allow save dialog to pop up.
-        SendKeys.Send("%(n)") 'Focus on file name.
-        SendKeys.Send(filename) 'Enter file name.
-        SendKeys.Send("%(t)") 'Focus on "Save as type".
-        SendKeys.Send("{DOWN 1}") 'Make list pop up.
-        SendKeys.Send("{UP 5}") 'Go to top of list.
-        SendKeys.Send("{TAB}") 'Tab off save as type.
-        SendKeys.Send("%(s)") 'Press "Save" button.
-        Threading.Thread.Sleep(DialogPopupWaitMs) 'Allow save dialog to close.
-    End Sub
-
-    Private Sub IEPageSaveAsWebArchive()
+    Private Sub IEPageSave(ByVal fileTypeUpFromBottom As Integer)
         SendKeys.Send("%(p)") 'Request "Page" menu.
         Threading.Thread.Sleep(MenuPopupWaitMs) 'Allow "Page" menu to pop up.
         SendKeys.Send("a") 'Select "Save As...".
@@ -106,7 +93,6 @@ Public Class SnagIt
         SendKeys.Send(filename) 'Enter file name.
         SendKeys.Send("%(t)") 'Focus on "Save as type".
         SendKeys.Send("{DOWN 5}") 'Select the last type.
-        Dim fileTypeUpFromBottom = 2 'Web Archive, single file (*.mht)
         SendKeys.Send("{UP " & fileTypeUpFromBottom & "}") 'Select desired type using relative position to last type.
         SendKeys.Send("{TAB}") 'Tab off save as type.
         SendKeys.Send("%(s)") 'Press "Save" button.
