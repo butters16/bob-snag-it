@@ -10,6 +10,7 @@ Public Class SnagIt
     Private Shared ReadOnly BringWindowToTopWaitMs As Integer = 1000
     Private Shared ReadOnly MenuPopupWaitMs As Integer = 1000
     Private Shared ReadOnly DialogPopupWaitMs As Integer = 1000
+    Private Shared ReadOnly FileSaveWaitMs As Integer = 2000
 
     Private filename As String = ""
 
@@ -81,7 +82,7 @@ Public Class SnagIt
         SendKeys.Send("%(n)") 'Focus on file name.
         SendKeys.Send(filename) 'Enter file name.
         SendKeys.Send("%(s)") 'Press "Save" button.
-        Threading.Thread.Sleep(DialogPopupWaitMs) 'Allow save dialog to close.
+        Threading.Thread.Sleep(FileSaveWaitMs) 'Allow save to happen.
     End Sub
 
     Private Sub IEPageSave(ByVal fileTypeUpFromBottom As Integer)
@@ -96,7 +97,7 @@ Public Class SnagIt
         SendKeys.Send("{UP " & fileTypeUpFromBottom & "}") 'Select desired type using relative position to last type.
         SendKeys.Send("{TAB}") 'Tab off save as type.
         SendKeys.Send("%(s)") 'Press "Save" button.
-        Threading.Thread.Sleep(DialogPopupWaitMs) 'Allow save dialog to close.
+        Threading.Thread.Sleep(FileSaveWaitMs) 'Allow save to happen.
     End Sub
 
 End Class
