@@ -58,6 +58,8 @@ Partial Class SnagIt
         'DoNotSaveCompleteCheckBox
         '
         Me.DoNotSaveCompleteCheckBox.AutoSize = True
+        Me.DoNotSaveCompleteCheckBox.Checked = True
+        Me.DoNotSaveCompleteCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
         Me.DoNotSaveCompleteCheckBox.Location = New System.Drawing.Point(12, 66)
         Me.DoNotSaveCompleteCheckBox.Name = "DoNotSaveCompleteCheckBox"
         Me.DoNotSaveCompleteCheckBox.Size = New System.Drawing.Size(292, 17)
